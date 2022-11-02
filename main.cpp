@@ -45,10 +45,10 @@ int main ()
     int y1;
     int y2;
 
-    cout << "Zapište souřadnici x prvního rohového bodu: "; cin >> x1;
-    cout << "Zapište souřadnici y prvního rohového bodu: "; cin >> y1;
-    cout << "Zapište souřadnici x druhého rohového bodu: "; cin >> x2;
-    cout << "Zapište souřadnici y druhého rohového bodu: "; cin >> y2;
+    cout << "Zapište souřadnici x levého horního bodu: "; cin >> x1;
+    cout << "Zapište souřadnici y levého horního bodu: "; cin >> y1;
+    cout << "Zapište souřadnici x pravého dolního bodu: "; cin >> x2;
+    cout << "Zapište souřadnici y pravého dolního bodu: "; cin >> y2;
 
     //vytvoření obdélníku s hledanou oblastí
 
