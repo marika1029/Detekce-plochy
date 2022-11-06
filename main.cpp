@@ -31,7 +31,7 @@ static void onClick(int event, int x, int y, int flags, void* param) //bude uži
             index1.push_back(y);
         }
 }
-int indexuj(vector<int> index2)
+int indexuj(vector<int> index2) //převede jakékoliv dva nakliknuté opoziční body na potřebné souřadnice pro další funkce
 {
     if(index2[index2.size()-4]<index2[index2.size()-2] && index2[index2.size()-3]>index2[index2.size()-1])
     {
