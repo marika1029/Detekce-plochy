@@ -9,7 +9,7 @@
 #include <string.h>
 #include "opencv2/opencv.hpp"
 #include <opencv2/core/matx.hpp>
-#include <fstream>
+#include <fstream> //načítání, ukládání a práce se soubory
 #include <cstdlib>
 #include <cstring>
 
@@ -761,7 +761,7 @@ int main ()
     image_rect = image_blur(Range(y3,y2), Range(x2,x3));
     image_rect2 = image(Range(y3,y2), Range(x2,x3));
 
-    //vvykreslí okno s posuvnou lištou a černobílím obrázkem s detekovanými hranami (přepočet probíhá v sekci CannyThreshold)
+    //vykreslí okno s posuvnou lištou a černobílým obrázkem s detekovanými hranami (přepočet probíhá v sekci CannyThreshold)
     hrany.create(image_rect.size(),image_rect.type());
     namedWindow( "Nalezené hrany", WINDOW_NORMAL);
     resizeWindow("Nalezené hrany",1500,1000);
@@ -776,7 +776,7 @@ int main ()
     //smyčka pro označení oblasti pro výpočet plochy
     loop2:
         image_test = Mat();
-        hrany.copyTo(image_test); //inicializace obrásků, aby neosahovali dříve označené body + vytvoření kopie abyhom si nezničili originál
+        hrany.copyTo(image_test); //inicializace obrázků, aby neosahovaly dříve označené body + vytvoření kopie abychom si nezničili originál
 
         //vykreslí nalezené hrany a umožní uživateli označit kliknutím hledanou plochu
         namedWindow("Klikněte do hledané oblasti:",WINDOW_NORMAL);
@@ -827,7 +827,7 @@ int main ()
 
         odstranhranu(hrany_closed,index4);
 
-        cout << "Pokud chcete vzmazat další hranu napište 0 jinak vypište 1: "; cin >> y_n5;
+        cout << "Pokud chcete vymazat další hranu napište 0 jinak vypište 1: "; cin >> y_n5;
     }while(y_n5==0);
 
 
@@ -844,7 +844,7 @@ int main ()
         waitKey(0);
 
         //zeptá se jestli se mu to takhle líbí
-        cout << "Pokud souhlasíte se navrhnutým uzavřením plochy 1 jinak vypište 0: "; cin >> y_n4;
+        cout << "Pokud souhlasíte s navrhnutým uzavřením plochy napište 1 jinak vypište 0: "; cin >> y_n4;
         if (y_n4 == 0)
         {
             loop4:
@@ -858,7 +858,7 @@ int main ()
 
                     odstranhranu(hrany_closed,index4);
 
-                    cout << "Pokud chcete vzmazat další hranu napište 0 jinak vypište 1: "; cin >> y_n5;
+                    cout << "Pokud chcete vymazat další hranu napište 0 jinak vypište 1: "; cin >> y_n5;
                 }while(y_n5==0);
 
                 do
@@ -871,7 +871,7 @@ int main ()
 
                     pridejhranu(hrany_closed,index5);
 
-                    cout << "Pokud chcete vzmazat další hranu napište 0 jinak vypište 1: "; cin >> y_n5;
+                    cout << "Pokud chcete vymazat další hranu napište 0 jinak vypište 1: "; cin >> y_n5;
                 }while(y_n5==0);
 
 
